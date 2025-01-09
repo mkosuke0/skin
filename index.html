@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Skin Viewer</title>
+  <script src="https://unpkg.com/skinview3d"></script>
+</head>
+<body>
+  <h1>My Minecraft Skin</h1>
+  <div id="skin_container" style="width: 300px; height: 400px;"></div>
+  
+  <script>
+    const skinContainer = document.getElementById("skin_container");
+
+    const viewer = new skinview3d.SkinViewer({
+      canvas: skinContainer,
+      width: 300,
+      height: 400,
+      skin: "https://sessionserver.mojang.com/session/minecraft/profile/3a662957-6385-4ce0-940a-cc7b7dec4a3c", // ここにスキン画像のURLを挿入
+    });
+
+    viewer.controls.enableRotate = true;
+    viewer.animation = new skinview3d.WalkingAnimation();
+  </script>
+</body>
+</html>
