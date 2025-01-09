@@ -5,22 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minecraft Skin Viewer</title>
   <script src="https://unpkg.com/skinview3d"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    #skin-container {
+      width: 300px;
+      height: 400px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-  <h1>My Minecraft Skin</h1>
-  <div id="skin_container" style="width: 300px; height: 400px;"></div>
-  
+  <h1>My Minecraft Skin Viewer</h1>
+  <div id="skin-container"></div>
   <script>
-    const skinContainer = document.getElementById("skin_container");
-
     const viewer = new skinview3d.SkinViewer({
-      canvas: skinContainer,
+      canvas: document.getElementById("skin-container"),
       width: 300,
       height: 400,
-      skin: "https://sessionserver.mojang.com/session/minecraft/profile/3a662957-6385-4ce0-940a-cc7b7dec4a3c", // ここにスキン画像のURLを挿入
+      skin: "https://github.com/mkosuke0/skin/blob/main/515a18185cd20076.png" // ここを更新
     });
 
     viewer.controls.enableRotate = true;
+    viewer.controls.enableZoom = true;
     viewer.animation = new skinview3d.WalkingAnimation();
   </script>
 </body>
