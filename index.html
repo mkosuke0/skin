@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minecraft Skin Viewer</title>
+  <!-- SkinView3Dライブラリを正しく読み込む -->
   <script src="https://unpkg.com/skinview3d/bundles/skinview3d.min.js"></script>
   <style>
     body {
@@ -25,19 +25,21 @@
   </style>
 </head>
 <body>
-  <h1>My Minecraft Skin Viewer</h1>
+  <h1>Minecraft Skin Viewer</h1>
   <canvas id="skin-container"></canvas>
   <script>
-    // スキンビューアの設定
+    // スキンビューアの初期設定
     const viewer = new skinview3d.SkinViewer({
       canvas: document.getElementById("skin-container"),
       width: 300,
       height: 400,
-      skin: "https://mkosuke0.github.io/skin/515a18185cd20076.png"
+      skin: "https://mkosuke0.github.io/skin/515a18185cd20076.png"  // スキン画像のURL
     });
 
-    // アニメーションを設定
+    // アニメーションの設定
     viewer.animation = new skinview3d.WalkingAnimation();
+
+    // ユーザー操作を有効化
     viewer.controls.enableRotate = true;
     viewer.controls.enableZoom = true;
   </script>
